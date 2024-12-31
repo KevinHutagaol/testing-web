@@ -1,0 +1,254 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+}
+
+#app  {
+  margin: 0;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* --------Header-------- */
+
+.header-top {
+  background-color: rgba(65, 141, 237, 0.9);
+  transition: background-color 0.25s ease-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 0.5em;
+  width: 100%;
+  overflow: hidden;
+  position: sticky;
+  top: 0;
+  left: 0;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2), 0 3px 5px 0 rgba(0, 0, 0, 0.19);
+}
+
+.header-top .container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  height: clamp(30px, 6vh, 54px);
+  align-items: center;
+  gap: 0.5em;
+}
+
+.header-top .logo {
+  border: none;
+  border-radius: 50%;
+  height: 75%;
+}
+
+.header-top h1 {
+  font-size: 1rem;
+  color: whitesmoke;
+  text-shadow: 1px 1px 0 black;
+}
+
+.header-top .header-btn {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5em;
+  margin-left: auto;
+}
+
+.header-top .header-btn a {
+  display: block;
+}
+
+.header-top .header-btn .nav-btn {
+  display: block;
+  border: none;
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+}
+
+.header-top .header-btn img:hover,
+.header-top .header-btn img:active,
+.header-top .header-btn img:focus {
+  transform: translate(1px, 1px);
+  filter: none ;
+}
+
+.header-top .header-btn img {
+  display: block;
+  vertical-align: top;
+  filter: drop-shadow(1px 1px 0 black);
+}
+
+.header-top nav {
+  transition: all 0.3s ease-out, opacity 0.3s ease-out;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0.5em 0;
+}
+
+.header-top nav a {
+  display: block;
+  width: 100%;
+  text-decoration: none;
+  font-weight: bold;
+  color: whitesmoke;
+  border-bottom: 0.1em solid rgba(255,255,255, 0.4);
+  text-shadow: 1px 1px 0 black;
+  padding: 0.5em 0;
+}
+
+a span {
+  text-shadow: 1px 1px 0 black;
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+a span:hover,
+a span:active,
+a span:focus {
+  transform: translate(1px, 1px);
+  text-shadow: none ;
+}
+
+.hidden {
+  display: none;
+  transform: translateY(-100%);
+}
+
+/* ---------------------- */
+/* ---------Main--------- */
+
+main {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1em;
+  padding: 0 1em;
+}
+
+main header {
+  height: auto;
+  display: block;
+  width: 100%;
+}
+
+main h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+main h2 {
+  margin: 0;
+  font-size: 0.75rem;
+  color: darkgray;
+}
+
+/* ---------------------- */
+/* ---------card--------- */
+
+.content-diktat-asis {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cards-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  width: 100%;
+  gap: 0.5em;
+}
+
+.card {
+  width: 100%;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 4px;
+  padding: 0.5em 1em;
+}
+
+.card h1 {
+  margin: 0;
+  font-size: 1.125rem;
+}
+
+.card h2 {
+  margin: 0;
+  font-size: 0.75rem;
+  font-weight: normal;
+}
+
+.card .btn-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25em;
+}
+
+.card .btn {
+  display: block;
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 8px;
+}
+
+.card a {
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.card .zoom-btn {
+  color: white;
+  background-color: #4A8CFF  ;
+  border-color: rgba(45, 140, 255, 0.8);
+}
+
+.card .drive-btn {
+  background-color: whitesmoke;
+  border-color: rgba(211, 47, 47, 0.8);
+}
+
+.card img {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  width: 100%;
+  height: 100px;
+  border: none;
+  border-radius: 5px;
+}
+
+.card:nth-child(3n) img { background-color: mediumspringgreen }
+.card:nth-child(3n + 1) img { background-color: #4A8CFF }
+.card:nth-child(3n + 2) img { background-color: #747bff }
+
+/* ---------------------- */
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
