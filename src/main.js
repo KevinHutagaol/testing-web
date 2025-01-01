@@ -2,9 +2,14 @@ import home from './views/home.js';
 import diktatAsis from './views/diktat-asistensi.js';
 import prokerLain from "./views/proker-lain.js";
 
+const navBar = document.getElementById('top-nav');
+
 const navigatePage = url => {
     history.pushState(null, null, url)
     router();
+    if (!navBar.classList.contains('hidden')) {
+        navBar.classList.toggle('hidden');
+    }
 }
 
 const router = async () => {
@@ -38,6 +43,6 @@ window.addEventListener("popstate", router)
 
 
 document.getElementById('nav-btn').addEventListener('click', e => {
-    document.getElementById('top-nav').classList.toggle('hidden');
+    navBar.classList.toggle('hidden');
     document.querySelector('.header-top').style.backgroundColor = 'rgba(65, 141, 237, 1)'
 })
