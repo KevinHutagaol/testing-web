@@ -8,13 +8,17 @@ export default class extends AbstractView {
     async renderHtml(appElement) {
         appElement.innerHTML = `
     <div>
-        <main class="main">
-            <header>
-                <h1>Akpro IME FTUI 2024</h1>
+    <main class="main main-main" >
+        <div class="main-intro-container intro-container">
+            <header class="main-intro intro">
+                <h1>Akpro IME FTUI 2025</h1>
                 <h2>Akademis dan Keprofesian</h2>
             </header>
-        </main>
+        </div>
+        <div class="content-main" id="content-main"></div>
+    </main>
     </div>     
     `
     }
 };
+

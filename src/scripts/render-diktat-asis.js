@@ -19,7 +19,7 @@ function renderCards(element, year, major) {
                         <h1>${d.name}</h1>
                         <h2>${d.major.join(", ")}, ${d.year.join(", ")}</h2>
                    </header> 
-                   <img src="${d.img}" loading="lazy" alt="Cover Diktat ${d.name}, ${d.major} ${d.year}">
+                   <img src="${d.img}" loading="eager" alt="Cover Diktat ${d.name}, ${d.major} ${d.year}">
                    <div class="btn-container">
                        <a href="${d.linkDrive}" class="btn drive-btn"><i class="material-symbols-rounded">picture_as_pdf</i> PDF</a>
                        <a href="${d.linkZoom}"  class="btn zoom-btn"><i class="material-symbols-rounded">videocam</i> Zoom</a>
