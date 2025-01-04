@@ -10,7 +10,7 @@ export default class extends AbstractView {
     async renderHtml(appElement) {
         appElement.innerHTML = `
   <div>
-    <main class="main">
+    <main class="main main-diktat-asis" >
         <div class="intro-container">
             <header class="intro">
                 <h1>Diktat dan Asistensi</h1>

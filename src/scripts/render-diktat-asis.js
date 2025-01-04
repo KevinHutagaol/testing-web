@@ -21,8 +21,8 @@ function renderCards(element, year, major) {
                    </header> 
                    <img src="${d.img}" loading="lazy" alt="Cover Diktat ${d.name}, ${d.major} ${d.year}">
                    <div class="btn-container">
-                       <a href="${d.linkDrive}" class="btn drive-btn">PDF </a>
-                       <a href="${d.linkZoom}"  class="btn zoom-btn">Zoom</a>
+                       <a href="${d.linkDrive}" class="btn drive-btn"><i class="material-symbols-rounded">picture_as_pdf</i> PDF</a>
+                       <a href="${d.linkZoom}"  class="btn zoom-btn"><i class="material-symbols-rounded">videocam</i> Zoom</a>
                    </div>
                </div>
             `

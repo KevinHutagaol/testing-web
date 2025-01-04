@@ -1,20 +1,26 @@
 <!doctype html>
-<html lang="en">
+<html lang="id" data-theme="light">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon"  href="https://ugc.production.linktr.ee/39766062-7679-45ff-a97f-4cd594ecc412_9FF36FC0-12E2-497A-AF5F-6D198D6A3DEC.jpeg?io=true&size=avatar-v3_0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0" />
     <link rel="stylesheet" href="./src/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite App</title>
   </head>
   <body>
     <header class="header-top">
       <div class="container">
-        <img src="https://ugc.production.linktr.ee/39766062-7679-45ff-a97f-4cd594ecc412_9FF36FC0-12E2-497A-AF5F-6D198D6A3DEC.jpeg?io=true&size=avatar-v3_0" class="logo" alt="logo AKPRO IME FTUI" />
-        <h1> AKPRO IME FTUI</h1>
+        <a href="/" class="logo-link" data-link>
+          <img src="https://ugc.production.linktr.ee/39766062-7679-45ff-a97f-4cd594ecc412_9FF36FC0-12E2-497A-AF5F-6D198D6A3DEC.jpeg?io=true&size=avatar-v3_0" class="logo" alt="logo AKPRO IME FTUI" />
+          <h1> AKPRO IME FTUI</h1>
+        </a>
         <div class="header-btn">
-          <a href="/" data-link> <img src="/home_icon.svg" alt="Home"> </a>
-          <button id="nav-btn" class="nav-btn"> <img src="/menu_icon.svg" alt="Menu"> </button>
+          <a href="/" data-link> <i class="material-symbols-rounded">home</i> </a>
+          <button id="nav-btn" class="nav-btn">  <i class="material-symbols-rounded"  aria-label="Toggle Sidebar" aria-controls="top-nav">menu</i></button>
         </div>
       </div>
     </header>
@@ -22,9 +28,12 @@
       <a href="https://youtube.com"><span>Channel Youtube </span></a>
       <a href="/diktat-asistensi" data-link><span>Diktat dan Asistensi </span></a>
       <a href="/proker-lain" data-link><span>Proker lain (WIP)</span></a>
+      <a href="/about" data-link><span>About (WIP)</span></a>
+      <span><button id="toggle-dark-mode" class="toggle-dark-mode">toggle</button> </span>
     </nav>
+    <div class="overlay" id="overlay" aria-hidden="true"></div>
     <div id="app"></div>
-    <footer class="footer">foot</footer>
+    <footer class="footer"><br><br>footer (WIP)<br><br></footer>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
