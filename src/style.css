@@ -11,9 +11,13 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  --box-shadow:
+          inset 0 0 0.5px 1px hsla(0, 0%, 100%, 0.075),
+          0 0 0 1px hsla(0, 0%, 0%, 0.05),
+          0 0.3px 0.4px hsla(0, 0%, 0%, 0.02),
+          0 0.9px 1.5px hsla(0, 0%, 0%, 0.045),
+          0 3.5px 6px hsla(0, 0%, 0%, 0.09);
 
-  --blue: rgba(65, 141, 237, 1);
-  --white-text: whitesmoke;
 }
 
 :root[data-theme="light"] {
@@ -35,8 +39,7 @@ body {
   margin: 0;
   display: flex;
   flex-direction: column;
-  min-height: 100dvh;
-  min-height: 100vh;
+  min-height: 100svh;
   background-color: var(--background);
 }
 
@@ -51,7 +54,7 @@ body {
 
 .material-symbols-rounded {
   display: inline-block;
-  vertical-align:middle;
+  vertical-align: middle;
 }
 
 /* --------Header-------- */
@@ -67,11 +70,7 @@ body {
   position: sticky;
   top: 0;
   left: 0;
-  box-shadow: inset 0 0 0.5px 1px hsla(0, 0%, 100%, 0.075),
-  0 0 0 1px hsla(0, 0%, 0%, 0.05),
-  0 0.3px 0.4px hsla(0, 0%, 0%, 0.02),
-  0 0.9px 1.5px hsla(0, 0%, 0%, 0.045),
-  0 3.5px 6px hsla(0, 0%, 0%, 0.09);
+  box-shadow: var(--box-shadow);
 
   z-index: 10;
 }
@@ -200,7 +199,7 @@ footer {
   display: block;
   margin-top: 2em;
   background-color: #213547;
-  color: var(--white-text);
+  color: whitesmoke;
 }
 
 
@@ -232,21 +231,10 @@ main header {
   background-color: rgba(var(--primary),0.1);
 }
 
-/*.intro-container::after {*/
-/*  content: "";*/
-/*  display: block;*/
-/*  clear: both;*/
-/*  height: 25px;*/
-/*  width: 100%;*/
-/*  background: rgb(var(--background)) url('/src/intro-divider.svg') no-repeat center center;*/
-/*  background-size: 100% 100%;*/
-/*}*/
-
-
 
 .intro {
   padding: 1em 0;
-  max-width: min(calc(100% - 2em), 1600px); /* very hacky pls fix */
+  max-width: min(calc(100% - 2em), 1600px);
   margin: 0 auto;
 }
 
@@ -287,6 +275,174 @@ select option {
   font-family: inherit;
 }
 
+.main-main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-intro-container {
+  position: relative;
+  isolation: isolate;
+  color: rgb(var(--background));
+  background: rgba(var(--primary), 0.1);
+  max-width: 100%;
+}
+
+.main-intro-container::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:  url("/background-home-hero.webp") no-repeat center center;
+  background-size: cover;
+  filter: blur(1px) brightness(0.5);
+  z-index: -1;
+}
+
+.main-intro {
+  margin: 0 auto;
+  max-width: none;
+  width: clamp(200px, 90%, 1000px);
+}
+
+.main-intro h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  color: rgb(248, 250, 251);
+  display: block;
+}
+
+.main-intro h2 {
+  font-size: clamp(1rem, 2.5vw, 1.66rem);
+  text-shadow: 1px 1px 1px 1px rgba(0,0,0, 0.5);
+}
+
+.content-main {
+  display: flex;
+}
+
+.proker-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.proker {
+  padding: 1rem 0 ;
+  width: clamp(200px, 90%, 1000px);
+  position: relative;
+  border-bottom: 2px solid rgba(var(--text), 0.3);
+}
+
+
+::-webkit-scrollbar {
+  height: 6px;
+  width: 12px;
+  background: rgb(var(--background));
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(var(--accent), 0.75);
+  -webkit-border-radius: 1ex;
+}
+
+::-webkit-scrollbar-corner {
+  background: #000;
+}
+.scroll-btn-container {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+@media screen and (max-width: 600px) {
+  .scroll-btn-container {
+    display: none;
+  }
+}
+.proker h2 {
+}
+
+.proker-content-container {
+  display: flex;
+  gap: 1rem;
+  padding: 1em  0;
+  overflow-x: auto;
+  width: 100%;
+}
+
+.proker-description {
+  display: block;
+  line-height: 2;
+  text-align: justify;
+  margin: 0;
+  max-width: 20rem;
+  flex-shrink: 0;
+}
+
+.proker-container h2 {
+  font-size: 1.86rem;
+  color: rgb(var(--text));
+}
+
+.proker-cards {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: nowrap;
+  overflow-x: visible;
+}
+
+
+
+.proker-cards .proker-card {
+  padding: 1rem;
+  display: flex;
+  flex-shrink: 0;
+  justify-content: flex-start;
+  color: inherit;
+  text-decoration: none;
+  box-shadow: var(--box-shadow);
+  max-width: 300px;
+  transition: box-shadow 0.15s ease-in-out;
+}
+
+.proker-card .material-symbols-rounded {
+  vertical-align: top;
+  display: inline-flex;
+  font-size: 1.86rem;
+}
+
+.proker-cards .proker-card:hover {
+  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2), 0 0 8px 0 rgba(0, 0, 0, 0.19);
+}
+
+.proker-cards .proker-card h2 {
+  font-size: 1.25rem;
+}
+
+@media screen and (max-width: 600px) {
+  .proker-content-container {
+    flex-direction: column;
+    width: 100%;
+    padding: 0;
+  }
+  .proker-description {
+    max-width: none;
+    line-height: 1.5;
+  }
+
+  .proker-cards {
+    width: 100%;
+    overflow-x: auto;
+    padding: 0.5rem 0;
+  }
+  .proker-cards .proker-card {
+    width: 80%;
+    flex-shrink: 0;
+  }
+}
+
+
 /* ---------------------- */
 /* ---------card--------- */
 
@@ -317,11 +473,7 @@ select option {
 
 .card {
   width: 100%;
-  box-shadow: inset 0 0 0.5px 1px hsla(0, 0%, 100%, 0.075),
-  0 0 0 1px hsla(0, 0%, 0%, 0.05),
-  0 0.3px 0.4px hsla(0, 0%, 0%, 0.02),
-  0 0.9px 1.5px hsla(0, 0%, 0%, 0.045),
-  0 3.5px 6px hsla(0, 0%, 0%, 0.09);
+  box-shadow: var(--box-shadow);
   border-radius: 4px;
   padding: 0.5em 1em;
   display: flex;
@@ -385,6 +537,7 @@ select option {
   height: 100px;
   border: none;
   border-radius: 5px;
+  font-style: italic;
 }
 
 .card:nth-child(3n) img { background-color: mediumspringgreen }
