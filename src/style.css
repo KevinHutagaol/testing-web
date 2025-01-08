@@ -120,11 +120,11 @@ body {
   cursor: pointer;
 }
 
-.header-top .header-btn a {
+.header-btn a {
   text-decoration: none;
 }
 
-.header-top .header-btn .nav-btn {
+.header-btn .nav-btn {
   display: block;
   border: none;
   margin: 0;
@@ -143,7 +143,7 @@ nav {
   overflow: hidden;
   transition: top 0.15s ease-out;
   position: fixed;
-  top: clamp(30px, 6vh, 54px); /* hacky find better solution */
+  top: clamp(30px, 6vh, 54px);
   max-height: none;
   z-index: 9;
 }
@@ -178,7 +178,7 @@ nav span {
 
 
 .hidden {
-  top: -100%; /* find better solution */
+  top: -100%;
 }
 
 .overlay {
@@ -191,6 +191,51 @@ nav span {
 
 nav:not(.hidden) ~ .overlay {
   display: block
+}
+
+.toggle-dark-mode {
+  border: none;
+  display: flex;
+  gap: 1rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 10px;
+  background-color: rgba(var(--accent), 0.1);
+  color: rgb(var(--text));
+}
+
+@media screen and (min-width: 1000px) {
+  .hidden {
+    top: 0;
+  }
+
+  nav {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: space-around;
+  }
+
+  nav a {
+    font-weight: normal;
+    font-size: 0.8rem;
+    border-bottom: none;
+    display: flex;
+    align-items: center;
+  }
+
+  .header-top .nav-btn  {
+    display: none;
+  }
+
+  .header-top .header-btn {
+    margin-right: 1rem;
+  }
+
+  .top-nav a {
+    width: fit-content;
+  }
+
 }
 /* ---------------------- */
 /* --------Footer-------- */
@@ -352,7 +397,23 @@ select option {
 .scroll-btn-container {
   position: absolute;
   top: 1rem;
-  right: 1rem;
+  right: 0;
+}
+
+.scroll-btn {
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: rgb(var(--primary));
+  transition: all 0.15s ease-in-out;
+}
+
+.scroll-btn-left:hover {
+  transform: translateX(-2px);
+}
+
+.scroll-btn-right:hover {
+  transform: translateX(2px);
 }
 
 @media screen and (max-width: 600px) {
@@ -366,7 +427,7 @@ select option {
 .proker-content-container {
   display: flex;
   gap: 1rem;
-  padding: 1em  0;
+  padding: 1rem  0;
   overflow-x: auto;
   width: 100%;
 }
@@ -391,7 +452,6 @@ select option {
   flex-wrap: nowrap;
   overflow-x: visible;
 }
-
 
 
 .proker-cards .proker-card {
